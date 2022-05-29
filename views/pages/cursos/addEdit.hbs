@@ -1,0 +1,39 @@
+{{> menu }}
+<br />
+<br />
+<div class="container"
+    style="width: 40%; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border: 2px solid rgb(51, 253, 112); padding:20px; background-color:rgb(51, 253, 112);">
+    <h2 style="text-align: center;">{{ viewTitle }}</h2>
+
+    <form action="/cursos" method="POST">
+        <input type="hidden" name="_id" value="{{curso._id}}" required>
+        
+        
+        <div class="form-group">
+            <label for="courseId">Course ID</label>
+            <input type="text" class="form-control" name="courseId" id="courseId" placeholder="ingrese el ID del curso"
+                value="{{curso.cursoID}}">
+        </div>
+        <div class="form-group">
+            <label for="size">Talla</label>
+            <input type="text" class="form-control" name="size" id="size" placeholder="ingrese talla"
+                value="{{curso.size}}">
+        </div>
+
+     
+        <div class="form-group">
+            <label for="teacherId">profesor ID</label>
+            <input type="text" class="form-control" name="teacherId" id="teacherId" placeholder="ingrese el ID del docente"
+                value="{{curso.teacherID}}">
+        </div>
+
+        <div class="form-group">
+            <label for="textbook">libro de texto</label>
+            <input type="text" class="form-control" name="textbook" id="textbook" placeholder="ingrese el libro de texto"
+                value="{{curso.textBook}}">
+        </div>
+
+
+        <button type="submit" class="btn btn-info">Guardar</button>
+    </form>
+</div>

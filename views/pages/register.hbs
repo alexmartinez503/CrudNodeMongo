@@ -1,0 +1,39 @@
+{{> loginHeader}}
+<div id="login">
+        <h3 class="text-center text-white pt-5">Inicio secion</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" method="POST" action="/register">
+                            <h3 class="text-center text-info">Inicio Secion</h3>
+                                {{#if message}}
+                                <div class="alert {{ messageClass }}">
+                                {{message}}
+                                </div>
+                                {{/if}}
+                            <div class="form-group">
+                                <label for="fullName" class="text-info">nombre:</label><br>
+                                <input type="text" name="fullName" id="fullName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-info">correo:</label><br>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Contraseña:</label><br>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                              <div class="form-group">
+                                <label for="password" class="text-info">Confirmar Contraseña:</label><br>
+                                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required>
+                            </div>
+                            <div id="register-link" class="text-right">
+                                <button type="submit" class="btn btn-primary">Inicio secion</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

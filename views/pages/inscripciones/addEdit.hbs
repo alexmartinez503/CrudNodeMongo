@@ -1,0 +1,38 @@
+{{> menu }}
+<br />
+<br />
+<div class="container"
+    style="width: 40%; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border: 2px solid rgb(51, 253, 112); border-radius: 5px; padding:20px; background-color:rgb(51, 253, 112);">
+    <h2 style="text-align: center;">{{ viewTitle }}</h2>
+    <form action=" /inscripciones" method="POST">
+        <input type="hidden" name="_id" value="{{inscripcion._id}}" required>
+
+        {{!-- este mensaje validara que el Estudiante Exista --}}
+        {{#if message}}
+        <div class="alert {{ messageClass }}">
+            {{message}}
+        </div>
+        {{/if}}
+
+        <div class="form-group">
+            <label for="studentId">Estudiante ID</label>
+            <input type="text" class="form-control" name="studentId" id="studentId" placeholder="ingrese su ID de estudiante"
+                aria-describedby="studentIdHelp" value="{{inscripcion.studentId}}">
+            <small id="studentIdHelp" class="form-text text-muted">Asegúrese de escribir el ID del curso exactamente como está
+                 registrado en nuestra base de datos.</small>
+        </div>
+        <div class="form-group">
+            <label for="courseId">Curso ID</label>
+            <input type="text" class="form-control" name="courseId" id="courseId" placeholder="ingrese el ID del curso"
+                aria-describedby="courseIdHelp" value="{{inscripcion.courseId}}">
+            <small id="courseIdHelp" class="form-text text-muted">Asegúrese de escribir el ID del curso exactamente como está
+                 registrado en nuestra base de datos.</small>
+        </div>
+        <div class="form-group">
+            <label for="size">Fecha</label>
+            <input type="date" class="form-control" name="date" id="date" placeholder="ingrese la fecha"
+                value="{{inscripcion.date}}">
+        </div>
+        <button type="submit" class="btn btn-info">Guardar</button>
+    </form>
+</div>

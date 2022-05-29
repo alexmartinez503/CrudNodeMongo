@@ -1,0 +1,29 @@
+{{> menu }}
+
+<h2 style="text-align: center;">{{ viewTitle }}</h2>
+<div class="container">
+    <table class="table table-striped table-dark">
+        <thead>
+            <th>Talla</th>
+            <th>profesor ID</th>
+            <th>libro de texto</th>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.cursoID}}</td>
+                <td>{{this.size}}</td>
+                <td>{{this.teacherID}}</td>
+                <td>{{this.textBook}}</td>
+                <td>
+                    <a href="/cursos/{{this._id}}" class="btn btn-info">Actualizar</a>
+                    <a href="/cursos/delete/{{this._id}}" class="btn btn-danger"
+                    onclick="return confirm('¿Desea eliminar este registro?');">
+                    Borrar</a>
+
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

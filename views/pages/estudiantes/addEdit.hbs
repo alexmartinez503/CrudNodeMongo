@@ -1,0 +1,35 @@
+{{> menu }}
+<br />
+<br />
+
+<div class="container"
+    style="width: 40%; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border: 2px solid rgb(51, 253, 112)); padding:20px; background-color: rgb(51, 253, 112);">
+    <h2 style="text-align: center;">{{ viewTitle }}</h2>
+
+    <form action="/estudiantes" method="POST">
+        <input type="hidden" name="_id" value="{{estudiante._id}}" required>
+        <div class="form-group">
+            <label for="studentId">estudiantes ID</label>
+            <input type="text" class="form-control" name="studentId" id="studentId" placeholder="ingrese su ID de estudiante"
+                value="{{estudiante.studentId}}">
+        </div>
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="ingrese su nombre completo"
+                value="{{estudiante.name}}">
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Fecha de Cumpleaños</label>
+            <input type="date" class="form-control" name="birthDate" id="birthDate" placeholder="ingrese su fecha de cumpleaños"
+                value="{{estudiante.birthDate}}">
+        </div>
+
+        <div class="form-group">
+            <label for="gradeLevel">Nivel de grado</label>
+            <input type="text" class="form-control" name="gradeLevel" id="gradeLevel" placeholder="ingrese su grado de estudio"
+                value="{{estudiante.gradeLevel}}">
+        </div>
+
+        <button type="submit" class="btn btn-info">Guardar</button>
+    </form>
+</div>
